@@ -9,7 +9,7 @@ on:
       - "qa"
 
 env:
-  NIRMATA_API_KEY: ${{secrets.NIRMATA_API_KEY}}
+  NIRMATA_TOKEN: ${{secrets.NIRMATA_API_KEY}}
   NIRMATA_URL: ${{secrets.NIRMATA_URL}}
 
 
@@ -42,6 +42,6 @@ jobs:
           chmod +x nctl
 
       - name: NCTL Scan - Repository
-        run: ./nctl scan repository --policies ./policy/ --token $NIRAMTA_API-KEY --url $NIRMATA_URL
+        run: ./nctl scan repository --policies ./policy/ --token $NIRMATA_TOKEN --url $NIRMATA_URL
   
       - run: echo "🍏 This job's status is ${{ job.status }}."
